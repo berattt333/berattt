@@ -20,24 +20,34 @@ export default function Hero() {
       </div>
 
       {/* Decorative circular badge */}
-      <div className="absolute right-6 top-24 z-10 hidden lg:block lg:right-12 lg:top-28">
-        <div className="relative h-28 w-28 lg:h-32 lg:w-32">
-          <svg viewBox="0 0 200 200" className="h-full w-full">
+      <div className="absolute right-8 top-28 z-10 hidden lg:block lg:right-16 lg:top-32">
+        <div className="relative h-40 w-40 lg:h-48 lg:w-48">
+          {/* Outer ring */}
+          <div className="absolute inset-0 rounded-full border border-ivory/15" />
+          {/* Inner ring */}
+          <div className="absolute inset-4 rounded-full border border-ivory/10" />
+          {/* Rotating text */}
+          <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full">
             <defs>
               <path
                 id="circle-path"
-                d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
+                d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
               />
             </defs>
-            <text className="fill-ivory/50 text-[10px] uppercase tracking-wide-2" fontFamily="Mulish">
+            <text className="fill-ivory/45 text-[9px] uppercase tracking-wide-2" fontFamily="Mulish" fontWeight={500}>
               <textPath href="#circle-path" startOffset="0%">
-                Wysteria Works · Çark Caddesi · Adapazarı ·
+                Wysteria Works · Çark Caddesi · Adapazarı · Sakarya ·
               </textPath>
             </text>
           </svg>
-          <span className="absolute inset-0 flex items-center justify-center font-serif text-xl text-brass-light italic">
-            w
-          </span>
+          {/* Center monogram */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-ivory/8 backdrop-blur-sm lg:h-24 lg:w-24">
+              <span className="font-serif text-3xl font-light italic text-ivory/80 lg:text-4xl">
+                w
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 

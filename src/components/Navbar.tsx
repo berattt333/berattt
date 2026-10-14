@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu as MenuIcon, X } from 'lucide-react';
+import { Menu as MenuIcon, X, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { useScrollPosition } from '@/hooks/useScrollReveal';
 
 const navLinks = [
   { to: '/', label: 'Ana Sayfa' },
-  { to: '/menu', label: 'Menü' },
   { to: '/about', label: 'Hikâyemiz' },
   { to: '/contact', label: 'İletişim' },
 ];
@@ -36,7 +35,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-10 lg:flex">
             {navLinks.map((link) => {
               const active = location.pathname === link.to;
               return (
@@ -53,9 +52,10 @@ export default function Navbar() {
             })}
             <Link
               to="/menu"
-              className="rounded-full bg-plum/90 px-6 py-2.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum"
+              className="group inline-flex items-center gap-2 rounded-full bg-plum px-6 py-2.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600"
             >
               Menüyü Keşfet
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
@@ -103,6 +103,14 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <Link
+              to="/menu"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center gap-2 rounded-full bg-plum px-6 py-3 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600"
+            >
+              Menüyü Keşfet
+              <ArrowRight size={14} />
+            </Link>
           </div>
           <div className="mt-auto border-t border-ivory-300 pt-6">
             <p className="text-sm text-mauve-dark">{siteConfig.addressShort}</p>

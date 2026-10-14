@@ -22,12 +22,12 @@
   }
 
   ::selection {
-    background-color: #5B8C8A;
-    color: #FAF6F0;
+    background-color: #9B8EC4;
+    color: #F8F5FB;
   }
 
   *:focus-visible {
-    outline: 2px solid #5B8C8A;
+    outline: 2px solid #9B8EC4;
     outline-offset: 3px;
   }
 }
@@ -81,12 +81,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF6F0;
+  background: #F8F5FB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #B8A5B0;
+  background: #C4B8D4;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9A8590;
+  background: #A89BC7;
 }

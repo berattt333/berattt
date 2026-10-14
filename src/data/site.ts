@@ -132,56 +132,37 @@ export const products: Product[] = [
     alt: 'Buzlu mocha',
   },
 
-  // --- Fırından ---
+  // --- Sıcak İçecekler ---
   {
-    id: 'pistachio-croissant',
-    name: 'Fıstıklı Kruvasan',
-    category: 'Fırından',
-    description: 'Kat kat tereyağı hamur, Antep fıstığı kreması.',
-    price: 85,
-    image: 'https://images.pexels.com/photos/39817069/pexels-photo-39817069.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'Fıstıklı kruvasan',
+    id: 'turkish-tea',
+    name: 'Türk Çayı',
+    category: 'Sıcak İçecekler',
+    description: 'Geleneksel ince belli bardakta, taze demlenmiş Rize çayı.',
+    price: 35,
+    image: 'https://images.pexels.com/photos/15445468/pexels-photo-15445468.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Türk çayı ince belli bardakta',
+  },
+  {
+    id: 'salep',
+    name: 'Salep',
+    category: 'Sıcak İçecekler',
+    description: 'Geleneksel salep, üzeri tarçın tozu; sıcak ve kremsi.',
+    price: 65,
+    image: 'https://images.pexels.com/photos/31845609/pexels-photo-31845609.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Salep içeceği',
     featured: true,
   },
   {
-    id: 'pain-au-chocolat',
-    name: 'Çikolatalı Kruvasan',
-    category: 'Fırından',
-    description: 'Eriyen bitter çikolata parçacıkları iç dolumu.',
-    price: 75,
-    image: 'https://images.pexels.com/photos/30926134/pexels-photo-30926134.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'Çikolatalı kruvasan',
-  },
-  {
-    id: 'sourdough',
-    name: 'Ekşi Maya Ekmek',
-    category: 'Fırından',
-    description: '24 saat fermente, çıtır kabuk, nemli iç.',
-    price: 70,
-    image: 'https://images.pexels.com/photos/30350359/pexels-photo-30350359.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'Ekşi maya ekmek',
-  },
-  {
-    id: 'cinnamon-roll',
-    name: 'Tarçınlı Çörek',
-    category: 'Fırından',
-    description: 'Tereyağı, tarçın ve şeker; üzerine kremalı glazür.',
+    id: 'hot-chocolate',
+    name: 'Sıcak Çikolata',
+    category: 'Sıcak İçecekler',
+    description: 'Eriyen bitter çikolata, süt ve tarçın; kalın ve kadifemsi.',
     price: 80,
-    image: 'https://images.pexels.com/photos/27098506/pexels-photo-27098506.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'Tarçınlı çörek',
+    image: 'https://images.pexels.com/photos/9228428/pexels-photo-9228428.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Sıcak çikolata',
   },
 
   // --- Tatlılar ---
-  {
-    id: 'san-sebastian',
-    name: 'San Sebastian Cheesecake',
-    category: 'Tatlılar',
-    description: 'Karamelize yüzey, kremsi merkez; fırından yeni çıkmış.',
-    price: 120,
-    image: 'https://images.pexels.com/photos/38495630/pexels-photo-38495630.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'San Sebastian cheesecake',
-    featured: true,
-  },
   {
     id: 'chocolate-cake',
     name: 'Bitter Çikolatalı Kek',
@@ -218,9 +199,19 @@ export const products: Product[] = [
     image: 'https://images.pexels.com/photos/31145291/pexels-photo-31145291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
     alt: 'Fıstıklı tatlı',
   },
+  {
+    id: 'waffle',
+    name: 'Waffle',
+    category: 'Tatlılar',
+    description: 'Çıtır waffle, muz, çilek ve vanilyalı dondurma; akçaağaç şurubu.',
+    price: 145,
+    image: 'https://images.pexels.com/photos/17558647/pexels-photo-17558647.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Muz ve çilekli waffle',
+    featured: true,
+  },
 ];
 
-export const categories = ['Kahveler', 'Soğuk İçecekler', 'Fırından', 'Tatlılar'];
+export const categories = ['Kahveler', 'Soğuk İçecekler', 'Sıcak İçecekler', 'Tatlılar'];
 
 export const galleryImages = [
   {
