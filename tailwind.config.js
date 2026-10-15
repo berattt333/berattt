@@ -35,9 +35,9 @@ export default {
           dark: '#A89070',
         },
         brass: {
-          DEFAULT: '#B8902A',
-          light: '#D4AF6A',
-          dark: '#7A5E10',
+          DEFAULT: '#B7684A',
+          light: '#D39575',
+          dark: '#87432F',
         },
         sage: {
           DEFAULT: '#B0C4B8',
