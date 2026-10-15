@@ -235,33 +235,33 @@ export const categories = ['Kahveler', 'Waffle\'lar', 'Soğuk İçecekler', 'Sı
 
 export const galleryImages = [
   {
-    url: 'https://images.pexels.com/photos/18832554/pexels-photo-18832554.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Vintage porselenlerle döşenmiş kafe iç mekanı, sıcak ışık',
+    url: 'https://images.pexels.com/photos/2079452/pexels-photo-2079452.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Ahşap raflar ve sıcak ışıkla döşenmiş vintage kafe iç mekanı',
     label: 'Mekan',
   },
   {
-    url: 'https://images.pexels.com/photos/1924955/pexels-photo-1924955.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Barista fincana latte sanatı dökerken',
+    url: 'https://images.pexels.com/photos/34902483/pexels-photo-34902483.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Baristanın fincana latte sanatı dökmesi',
     label: 'Barista',
   },
   {
-    url: 'https://images.pexels.com/photos/2079448/pexels-photo-2079448.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Kitaplı, ahşap duvarlı, vintage dekorlu sıcak kahve dükkanı',
+    url: 'https://images.pexels.com/photos/35518412/pexels-photo-35518412.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Vintage detaylarla dekore edilmiş sıcak ve rustik kafe',
     label: 'Atmosfer',
   },
   {
-    url: 'https://images.pexels.com/photos/38935410/pexels-photo-38935410.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Yeni fırınlanmış altın renkli kruvasanların katmanları',
+    url: 'https://images.pexels.com/photos/16192282/pexels-photo-16192282.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Sepette servis edilen taze kruvasanlar',
     label: 'Fırından',
   },
   {
-    url: 'https://images.pexels.com/photos/20285606/pexels-photo-20285606.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Sıcak ışıkla döşenmiş davetkâr kafe oturma alanı',
+    url: 'https://images.pexels.com/photos/18405036/pexels-photo-18405036.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Pencereleri ve masaları olan aydınlık, davetkâr kafe oturma alanı',
     label: 'Oturma',
   },
   {
-    url: 'https://images.pexels.com/photos/3952059/pexels-photo-3952059.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
-    alt: 'Kafede barista elinde taze latte sanatı hazırlarken',
+    url: 'https://images.pexels.com/photos/38591677/pexels-photo-38591677.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Baristanın sütü kahveye dökerek latte sanatı hazırlaması',
     label: 'El sanatı',
   },
 ];
