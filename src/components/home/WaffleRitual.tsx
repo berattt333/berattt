@@ -40,15 +40,14 @@ export default function WaffleRitual() {
     };
   }, []);
 
-  const spreadFactor = clamp(window.innerWidth / 1180, 0.72, 1);
+  const isMobile = window.innerWidth <= 640;
+  const spreadFactor = isMobile ? 0.36 : clamp(window.innerWidth / 1180, 0.72, 1);
 
   return (
     <div ref={sectionRef} className="waffle-ritual" aria-label="Wysteria tatlı bir mola">
       <span className="waffle-ritual-line waffle-ritual-line-left" aria-hidden="true" />
       <div className="waffle-ritual-center">
-        <span className="waffle-ritual-kicker">Birlikte güzel</span>
         <span className="waffle-ritual-word">Wysteria</span>
-        <span className="waffle-ritual-kicker">tatlı bir mola</span>
       </div>
       <span className="waffle-ritual-line waffle-ritual-line-right" aria-hidden="true" />
 
