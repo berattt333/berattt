@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-30, -18], end: [-190, -118], rotate: -18 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -20], end: [0, -150], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [30, -18], end: [190, -112], rotate: 18 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [-24, 18], end: [-175, 118], rotate: 16 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [25, 18], end: [180, 120], rotate: -16 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-225, -145], end: [-405, -260], rotate: -18 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -185], end: [0, -315], rotate: 8 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [225, -140], end: [405, -250], rotate: 18 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [-215, 145], end: [-375, 265], rotate: 16 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [215, 145], end: [380, 270], rotate: -16 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
@@ -41,7 +41,7 @@ export default function WaffleRitual() {
     };
   }, []);
 
-  const spreadFactor = clamp(window.innerWidth / 900, 0.55, 1);
+  const spreadFactor = clamp(window.innerWidth / 780, 0.68, 1);
 
   return (
     <div ref={sectionRef} className="waffle-ritual" aria-label="Wysteria waffle seçkisi">

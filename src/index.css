@@ -71,24 +71,27 @@
   .waffle-ritual {
     position: relative;
     display: flex;
-    min-height: 220px;
+    min-height: 380px;
     align-items: center;
     justify-content: center;
-    margin: -20px auto 54px;
-    max-width: 900px;
+    margin: -20px auto 48px;
+    max-width: 1040px;
+    overflow: visible;
   }
 
   .waffle-ritual-center {
     position: relative;
     z-index: 2;
     display: flex;
+    min-width: 210px;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-    padding: 16px 28px;
+    gap: 4px;
+    padding: 16px 28px 17px;
+    border: 1px solid rgb(184 144 42 / 0.2);
     border-radius: 999px;
-    background: rgb(250 247 242 / 0.9);
-    box-shadow: 0 8px 32px rgb(90 62 43 / 0.08);
+    background: rgb(250 247 242 / 0.94);
+    box-shadow: 0 10px 30px rgb(90 62 43 / 0.07);
     backdrop-filter: blur(5px);
   }
 
@@ -113,40 +116,50 @@
     position: absolute;
     top: 50%;
     z-index: 1;
+    width: min(26vw, 245px);
     height: 1px;
-    width: min(34vw, 250px);
-    background: linear-gradient(90deg, transparent, rgb(184 144 42 / 0.65));
+    background: #B8902A;
+    opacity: 0.48;
   }
 
+  .waffle-ritual-line::before,
   .waffle-ritual-line::after {
     position: absolute;
     top: 50%;
-    width: 7px;
-    height: 7px;
-    border: 1px solid rgb(184 144 42 / 0.7);
+    width: 5px;
+    height: 5px;
+    border: 1px solid #B8902A;
+    background: #FAF7F2;
     content: '';
     transform: translateY(-50%) rotate(45deg);
   }
 
-  .waffle-ritual-line-left {
-    right: calc(50% + 112px);
+  .waffle-ritual-line::before {
+    left: 0;
   }
 
-  .waffle-ritual-line-left::after {
+  .waffle-ritual-line::after {
     right: 0;
   }
 
+  .waffle-ritual-line-left {
+    right: calc(50% + 116px);
+  }
+
   .waffle-ritual-line-right {
-    left: calc(50% + 112px);
-    transform: scaleX(-1);
+    left: calc(50% + 116px);
   }
 
   .waffle-piece {
     position: absolute;
+    top: 50%;
+    left: 50%;
     z-index: 3;
     display: block;
-    width: clamp(92px, 13vw, 148px);
+    width: clamp(92px, 13vw, 158px);
     aspect-ratio: 1.25;
+    margin-top: -55px;
+    margin-left: -79px;
     background-image: url('/assets/home/hero/image.png');
     background-repeat: no-repeat;
     background-size: 385% 290%;
@@ -156,32 +169,22 @@
   }
 
   .waffle-piece-sprinkle {
-    top: 5%;
-    left: 26%;
     background-position: 0% 0%;
   }
 
   .waffle-piece-chocolate {
-    top: 0;
-    left: 42%;
     background-position: 50% 0%;
   }
 
   .waffle-piece-fruit {
-    top: 7%;
-    right: 25%;
     background-position: 100% 0%;
   }
 
   .waffle-piece-cookie {
-    bottom: 3%;
-    left: 34%;
     background-position: 20% 100%;
   }
 
   .waffle-piece-strawberry {
-    right: 34%;
-    bottom: 0;
     background-position: 82% 100%;
   }
 
@@ -192,6 +195,37 @@
   @keyframes scrollCue {
     0%, 100% { transform: translateY(0); opacity: 0.45; }
     50% { transform: translateY(8px); opacity: 1; }
+  }
+}
+
+@media (max-width: 640px) {
+  .waffle-ritual {
+    min-height: 310px;
+    margin-top: -8px;
+    margin-bottom: 36px;
+  }
+
+  .waffle-ritual-center {
+    min-width: 184px;
+    padding-inline: 20px;
+  }
+
+  .waffle-ritual-line {
+    width: 42px;
+  }
+
+  .waffle-ritual-line-left {
+    right: calc(50% + 100px);
+  }
+
+  .waffle-ritual-line-right {
+    left: calc(50% + 100px);
+  }
+
+  .waffle-piece {
+    width: 104px;
+    margin-top: -42px;
+    margin-left: -52px;
   }
 }
 
