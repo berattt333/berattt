@@ -15,58 +15,64 @@ export default function Gallery() {
           <OrnamentalRule className="mt-6" />
         </Reveal>
 
-        {/* Gallery — varied sizes with soft rounded corners */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-12 lg:gap-6">
-          <Reveal className="col-span-2 lg:col-span-6">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[0].url} alt={galleryImages[0].alt} aspect="aspect-[16/11]" loading="lazy" />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:auto-rows-[150px] lg:grid-cols-12 lg:gap-6">
+          <Reveal className="h-full sm:col-span-2 lg:col-span-7 lg:row-span-2">
+            <div className="group relative h-full overflow-hidden rounded-[2rem]">
+              <SmartImage
+                src={galleryImages[0].url}
+                alt={galleryImages[0].alt}
+                aspect="aspect-[16/11] lg:aspect-none lg:h-full"
+                loading="lazy"
+              />
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-6 transition-opacity group-hover:from-plum/30">
                 <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[0].label}</span>
               </div>
             </div>
           </Reveal>
-          <Reveal delay={1} className="col-span-1 lg:col-span-3 lg:mt-12">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[1].url} alt={galleryImages[1].alt} aspect="aspect-[4/5]" loading="lazy" />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-6 transition-opacity group-hover:from-plum/30">
+
+          <Reveal delay={1} className="h-full sm:col-span-1 lg:col-span-5">
+            <div className="group relative h-full overflow-hidden rounded-[2rem]">
+              <SmartImage
+                src={galleryImages[1].url}
+                alt={galleryImages[1].alt}
+                aspect="aspect-[4/3] lg:aspect-none lg:h-full"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-5 transition-opacity group-hover:from-plum/30">
                 <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[1].label}</span>
               </div>
             </div>
           </Reveal>
 
-          <Reveal className="col-span-1 lg:col-span-3 lg:mt-12">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[2].url} alt={galleryImages[2].alt} aspect="aspect-[3/4]" loading="lazy" />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-4 transition-opacity group-hover:from-plum/30">
+          <Reveal className="h-full sm:col-span-1 lg:col-span-5">
+            <div className="group relative h-full overflow-hidden rounded-[2rem]">
+              <SmartImage
+                src={galleryImages[2].url}
+                alt={galleryImages[2].alt}
+                aspect="aspect-[4/3] lg:aspect-none lg:h-full"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-5 transition-opacity group-hover:from-plum/30">
                 <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[2].label}</span>
               </div>
             </div>
           </Reveal>
-          <Reveal delay={1} className="col-span-1 lg:col-span-4 lg:mt-4">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[3].url} alt={galleryImages[3].alt} aspect="aspect-[3/4]" loading="lazy" />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-4 transition-opacity group-hover:from-plum/30">
-                <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[3].label}</span>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={2} className="col-span-2 lg:col-span-4 lg:mt-12">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[4].url} alt={galleryImages[4].alt} aspect="aspect-[3/4]" loading="lazy" />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-4 transition-opacity group-hover:from-plum/30">
-                <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[4].label}</span>
-              </div>
-            </div>
-          </Reveal>
 
-          <Reveal className="col-span-2 mt-4 lg:col-span-8 lg:col-start-3 lg:mt-12">
-            <div className="group relative overflow-hidden rounded-3xl">
-              <SmartImage src={galleryImages[5].url} alt={galleryImages[5].alt} aspect="aspect-[16/7]" loading="lazy" />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-6 transition-opacity group-hover:from-plum/30">
-                <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{galleryImages[5].label}</span>
+          {galleryImages.slice(3).map((image, index) => (
+            <Reveal key={image.url} delay={(index % 3) as 0 | 1 | 2} className="h-full sm:col-span-1 lg:col-span-4 lg:row-span-2">
+              <div className="group relative h-full overflow-hidden rounded-[2rem]">
+                <SmartImage
+                  src={image.url}
+                  alt={image.alt}
+                  aspect="aspect-[4/3] lg:aspect-none lg:h-full"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-plum/50 to-transparent p-5 transition-opacity group-hover:from-plum/30">
+                  <span className="text-xs font-medium uppercase tracking-wide-2 text-ivory">{image.label}</span>
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

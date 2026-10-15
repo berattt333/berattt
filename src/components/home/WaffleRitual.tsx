@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-225, -145], end: [-405, -260], rotate: -18 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -185], end: [0, -315], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [225, -140], end: [405, -250], rotate: 18 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [-215, 145], end: [-375, 265], rotate: 16 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [215, 145], end: [380, 270], rotate: -16 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-195, -120], end: [-390, -255], rotate: -18 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -155], end: [0, -315], rotate: 8 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [195, -116], end: [390, -245], rotate: 18 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [-185, 125], end: [-370, 265], rotate: 16 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [185, 125], end: [375, 270], rotate: -16 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);

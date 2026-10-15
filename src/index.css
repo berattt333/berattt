@@ -156,13 +156,13 @@
     left: 50%;
     z-index: 3;
     display: block;
-    width: clamp(92px, 13vw, 158px);
-    aspect-ratio: 1.25;
+    width: clamp(120px, 18vw, 220px);
+    aspect-ratio: 1.28;
     margin-top: -55px;
     margin-left: -79px;
-    background-image: url('/assets/home/hero/image.png');
+    background-image: url('/assets/story/image copy.png');
     background-repeat: no-repeat;
-    background-size: 385% 290%;
+    background-size: 280% 210%;
     filter: drop-shadow(0 12px 8px rgb(44 26 14 / 0.16));
     pointer-events: none;
     transition: transform 120ms linear;
@@ -223,9 +223,9 @@
   }
 
   .waffle-piece {
-    width: 104px;
-    margin-top: -42px;
-    margin-left: -52px;
+    width: 124px;
+    margin-top: -48px;
+    margin-left: -62px;
   }
 }
 
