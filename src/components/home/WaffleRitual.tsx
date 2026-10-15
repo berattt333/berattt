@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-245, -125], end: [-405, -260], rotate: -18 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -175], end: [0, -315], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [245, -120], end: [405, -250], rotate: 18 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [-220, 145], end: [-375, 270], rotate: 16 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [220, 145], end: [380, 275], rotate: -16 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-128, -18], end: [-330, -82], rotate: -12 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [-42, -42], end: [-68, -148], rotate: -4 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [128, -18], end: [330, -82], rotate: 12 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [-92, 42], end: [-238, 102], rotate: 10 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [92, 42], end: [238, 102], rotate: -10 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
@@ -41,11 +41,19 @@ export default function WaffleRitual() {
     };
   }, []);
 
-  const spreadFactor = clamp(window.innerWidth / 980, 0.7, 1);
-  const pieceScale = clamp(window.innerWidth / 1100, 0.62, 1);
+  const spreadFactor = clamp(window.innerWidth / 1080, 0.72, 1);
+  const pieceScale = clamp(window.innerWidth / 1180, 0.5, 0.82);
 
   return (
     <div ref={sectionRef} className="waffle-ritual" aria-label="Wysteria waffle seçkisi">
+      <svg className="waffle-sketch" viewBox="0 0 240 190" aria-hidden="true">
+        <path className="waffle-sketch-shadow" d="M44 77 151 34c12-5 25 1 30 13l25 63c4 12-2 24-14 29l-107 38c-12 4-24-2-29-14L31 106c-4-12 1-24 13-29Z" />
+        <path className="waffle-sketch-outline" d="m43 75 108-42c12-5 25 1 30 13l25 63c4 12-2 24-14 29L85 176c-12 4-24-2-29-14l-25-63c-4-12 1-20 12-24Z" />
+        <path className="waffle-sketch-grid" d="m58 73 27 84M83 63l28 83M108 53l28 82M133 44l28 81M158 43l24 70M45 101l137-53M53 126l137-53M63 151l136-52" />
+        <path className="waffle-sketch-drizzle" d="m59 91c17-19 27 8 42-8s25-5 37-17 24-5 40-18" />
+        <circle className="waffle-sketch-dot" cx="73" cy="139" r="4" />
+        <circle className="waffle-sketch-dot" cx="166" cy="83" r="4" />
+      </svg>
       <div className="waffle-ritual-line waffle-ritual-line-left" aria-hidden="true" />
       <div className="waffle-ritual-center">
         <span className="waffle-ritual-kicker">Birlikte güzel</span>
