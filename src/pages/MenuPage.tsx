@@ -1,10 +1,9 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { products, categories, siteConfig } from '@/data/site';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
-import { OrnamentalRule } from '@/components/SectionHeading';
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<string>(categories[0]);
@@ -25,36 +24,40 @@ export default function MenuPage() {
 
       <section className="bg-ivory px-6 py-16 lg:px-12 lg:py-24">
         <div className="mx-auto max-w-[1100px]">
-          {/* Category navigation — pill tabs */}
+          {/* Category navigation — horizontally scrollable on mobile */}
           <div className="sticky top-16 z-30 -mx-6 mb-8 bg-ivory/90 px-6 py-3 backdrop-blur-md lg:mx-0 lg:rounded-full lg:px-4">
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none sm:flex-wrap sm:justify-center sm:pb-0">
               {categories.map((cat) => {
                 const active = cat === activeCategory;
+                const count = products.filter((p) => p.category === cat).length;
                 return (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                    className={`flex-shrink-0 rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
                       active
-                        ? 'bg-plum text-ivory'
+                        ? 'bg-plum text-ivory shadow-sm'
                         : 'bg-ivory-200 text-espresso/70 hover:bg-mauve/20'
                     }`}
                     aria-pressed={active}
                   >
                     {cat}
+                    <span className={`ml-1.5 text-xs ${active ? 'text-ivory/70' : 'text-espresso/40'}`}>
+                      {count}
+                    </span>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Product list — compact rows with small thumbnails */}
+          {/* Product list */}
           <div className="divide-y divide-ivory-300/60">
             {filteredProducts.map((product, index) => (
               <Reveal key={product.id} delay={index < 4 ? (index % 4) as 0 | 1 | 2 | 3 : 0}>
                 <article className="group flex items-center gap-4 py-5 transition-colors duration-200 hover:bg-ivory-200/50 sm:gap-6 sm:py-6">
                   {/* Thumbnail */}
-                  <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full sm:h-20 sm:w-20">
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full sm:h-20 sm:w-20">
                     <img
                       src={product.image}
                       alt={product.alt}
@@ -65,11 +68,19 @@ export default function MenuPage() {
                   </div>
 
                   {/* Info */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-medium text-espresso sm:text-lg">
-                      {product.name}
-                    </h3>
-                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-espresso/60 sm:line-clamp-1">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-base font-medium text-espresso sm:text-lg">
+                        {product.name}
+                      </h3>
+                      {product.featured && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-brass/15 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-brass-dark">
+                          <Star size={9} fill="currentColor" />
+                          Popüler
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-espresso/55 sm:line-clamp-1">
                       {product.description}
                     </p>
                   </div>
@@ -85,8 +96,8 @@ export default function MenuPage() {
             ))}
           </div>
 
-          {/* Note */}
-          <div className="mt-12 rounded-2xl bg-ivory-200/70 px-6 py-5 text-center">
+          {/* Seasonal note */}
+          <div className="mt-12 rounded-2xl border border-brass/20 bg-brass/5 px-6 py-5 text-center">
             <p className="text-sm leading-relaxed text-espresso/55">
               Fiyatlar ve ürünler taslak amaçlıdır. Mevsimsel değişiklikler
               ve güncellemeler işletme tarafından yapılabilir.

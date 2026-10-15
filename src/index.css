@@ -15,12 +15,7 @@
     @apply bg-ivory text-espresso font-sans;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
   }
-  img {
-    max-width: 100%;
-  }
-
 
   img {
     max-width: 100%;
@@ -32,12 +27,12 @@
   }
 
   ::selection {
-    background-color: #9B8EC4;
-    color: #F8F5FB;
+    background-color: #B8902A;
+    color: #FAF7F2;
   }
 
   *:focus-visible {
-    outline: 2px solid #9B8EC4;
+    outline: 2px solid #B8902A;
     outline-offset: 3px;
   }
 }
@@ -45,6 +40,15 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hide scrollbar on mobile category tabs */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
 
   .reveal {
@@ -77,7 +81,8 @@
 
   .animate-fade-up,
   .animate-fade-in,
-  .animate-slow-zoom {
+  .animate-slow-zoom,
+  .animate-spin-slow {
     animation: none;
   }
 
@@ -91,12 +96,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F5FB;
+  background: #FAF7F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C4B8D4;
+  background: #D4AF6A;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A89BC7;
+  background: #B8902A;
 }

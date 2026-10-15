@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import PageMeta from '@/components/PageMeta';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import HomePage from '@/pages/HomePage';
 import MenuPage from '@/pages/MenuPage';
 import AboutPage from '@/pages/AboutPage';
@@ -24,6 +25,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </BrowserRouter>
   );
 }

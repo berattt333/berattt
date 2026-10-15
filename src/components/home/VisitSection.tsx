@@ -1,6 +1,7 @@
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import Reveal from '@/components/Reveal';
+import MapFallback from '@/components/MapFallback';
 import { Eyebrow, OrnamentalRule } from '@/components/SectionHeading';
 
 export default function VisitSection() {
@@ -33,7 +34,7 @@ export default function VisitSection() {
                     {siteConfig.hours.map((h) => (
                       <div key={h.day} className="flex justify-between gap-8 text-base text-espresso/70">
                         <span>{h.day}</span>
-                        <span className="text-mauve-dark">{h.time}</span>
+                        <span className="text-brass-dark">{h.time}</span>
                       </div>
                     ))}
                   </div>
@@ -56,21 +57,9 @@ export default function VisitSection() {
             </p>
           </Reveal>
 
-          {/* Map */}
+          {/* Map fallback */}
           <Reveal delay={1} className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-lg">
-              <iframe
-                src={siteConfig.mapEmbedUrl}
-                width="100%"
-                height="480"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                title="Wysteria Works konum haritası"
-                className="block w-full"
-              />
-            </div>
+            <MapFallback />
           </Reveal>
         </div>
       </div>

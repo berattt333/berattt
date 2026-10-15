@@ -1,7 +1,8 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Phone, Clock, MapPin, Instagram, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, Clock, MapPin, Instagram, ArrowRight, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import PageHeader from '@/components/PageHeader';
+import MapFallback from '@/components/MapFallback';
 import Reveal from '@/components/Reveal';
 import { OrnamentalRule, Eyebrow } from '@/components/SectionHeading';
 
@@ -18,6 +19,7 @@ export default function ContactPage() {
   const [form, setForm] = useState<FormData>({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validate = (): boolean => {
     const e: Errors = {};
@@ -33,7 +35,12 @@ export default function ContactPage() {
 
   const handleSubmit = (ev: FormEvent) => {
     ev.preventDefault();
-    if (validate()) setSubmitted(true);
+    if (!validate()) return;
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 1200);
   };
 
   const handleChange = (field: keyof FormData, value: string) => {
@@ -42,7 +49,7 @@ export default function ContactPage() {
   };
 
   const inputClass = (hasError?: string) =>
-    `w-full rounded-xl border bg-ivory px-4 py-3 text-espresso placeholder:text-mauve/40 focus:outline-none focus:ring-2 focus:ring-brass/30 transition-all ${
+    `w-full rounded-xl border bg-ivory px-4 py-3 text-espresso placeholder:text-mauve/60 focus:outline-none focus:ring-2 focus:ring-brass/40 transition-all ${
       hasError ? 'border-red-400' : 'border-ivory-300'
     }`;
 
@@ -102,7 +109,7 @@ export default function ContactPage() {
                       {siteConfig.hours.map((h) => (
                         <div key={h.day} className="flex justify-between gap-8 text-base text-espresso/70">
                           <span>{h.day}</span>
-                          <span className="text-mauve-dark">{h.time}</span>
+                          <span className="text-brass-dark">{h.time}</span>
                         </div>
                       ))}
                     </div>
@@ -135,9 +142,8 @@ export default function ContactPage() {
                       Mesajınız alındı. En kısa sürede size geri döneceğiz.
                     </p>
                     <p className="mt-4 text-xs text-mauve-dark">
-                      Bu bir ön yüz prototipidir; mesaj gönderme entegrasyonu
-                      bekleniyor. Gerçek gönderim için bir e-posta veya form
-                      servisi bağlanmalıdır.
+                      Bu bir ön yüz prototipidir; gerçek gönderim için
+                      bir e-posta servisi entegrasyonu gereklidir.
                     </p>
                     <button
                       onClick={() => { setSubmitted(false); setForm({ name: '', email: '', subject: '', message: '' }); }}
@@ -180,15 +186,27 @@ export default function ContactPage() {
                       {errors.message && <p id="message-error" className="mt-1 flex items-center gap-1 text-sm text-red-600"><AlertCircle size={14} /> {errors.message}</p>}
                     </div>
 
-                    <button type="submit" className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-plum px-7 py-3.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600 sm:w-auto">
-                      Mesaj Gönder
-                      <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-plum px-7 py-3.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                    >
+                      {loading ? (
+                        <>
+                          <Loader2 size={15} className="animate-spin" />
+                          Gönderiliyor...
+                        </>
+                      ) : (
+                        <>
+                          Mesaj Gönder
+                          <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                        </>
+                      )}
                     </button>
 
                     <p className="text-xs leading-relaxed text-mauve-dark">
-                      Bu form bir ön yüz prototipidir; mesaj gönderme
-                      entegrasyonu bekleniyor. Gerçek gönderim için bir
-                      e-posta veya form servisi bağlanmalıdır.
+                      Bu form bir ön yüz prototipidir; gerçek gönderim için
+                      bir e-posta servisi entegrasyonu gereklidir.
                     </p>
                   </form>
                 )}
@@ -198,25 +216,7 @@ export default function ContactPage() {
 
           {/* Map */}
           <Reveal className="mt-20">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-lg">
-              <iframe
-                src={siteConfig.mapEmbedUrl}
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-                title="Wysteria Works konum haritası"
-                className="block w-full"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <a href={siteConfig.directionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-brass-dark transition-colors hover:text-plum">
-                <MapPin size={16} />
-                Google Maps'te Yol Tarifi Al
-              </a>
-            </div>
+            <MapFallback />
           </Reveal>
         </div>
       </section>

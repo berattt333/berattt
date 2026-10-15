@@ -5,11 +5,11 @@ export default {
     extend: {
       colors: {
         ivory: {
-          DEFAULT: '#F8F5FB',
-          50: '#FDFBFF',
-          100: '#F8F5FB',
-          200: '#EEE8F4',
-          300: '#E0D7EC',
+          DEFAULT: '#FAF7F2',
+          50: '#FDFCF9',
+          100: '#FAF7F2',
+          200: '#F0E8DA',
+          300: '#E4D8C8',
         },
         plum: {
           DEFAULT: '#6B5B95',
@@ -22,22 +22,22 @@ export default {
           600: '#493D6E',
         },
         espresso: {
-          DEFAULT: '#3D3A52',
-          50: '#7A7592',
-          100: '#5D5A78',
-          200: '#4D4A65',
-          300: '#3D3A52',
-          400: '#2D2A3E',
+          DEFAULT: '#2C1A0E',
+          50: '#7A6352',
+          100: '#5D4A38',
+          200: '#4A3828',
+          300: '#2C1A0E',
+          400: '#1A0E06',
         },
         mauve: {
-          DEFAULT: '#C4B8D4',
-          light: '#DDD3E8',
-          dark: '#A89BC7',
+          DEFAULT: '#C4B09A',
+          light: '#DDD0BE',
+          dark: '#A89070',
         },
         brass: {
-          DEFAULT: '#9B8EC4',
-          light: '#C4B8D4',
-          dark: '#7B6EA8',
+          DEFAULT: '#B8902A',
+          light: '#D4AF6A',
+          dark: '#7A5E10',
         },
         sage: {
           DEFAULT: '#B0C4B8',
@@ -57,6 +57,7 @@ export default {
         'fade-up': 'fadeUp 0.8s ease-out forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
         'slow-zoom': 'slowZoom 20s ease-in-out infinite alternate',
+        'spin-slow': 'spin 18s linear infinite',
       },
       keyframes: {
         fadeUp: {
