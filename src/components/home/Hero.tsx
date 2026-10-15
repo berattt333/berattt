@@ -15,32 +15,35 @@ export default function Hero() {
           }}
           aria-hidden="true"
         />
-        {/* Stronger overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-espresso/75 via-espresso/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ivory/95 via-ivory/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-espresso/80 via-espresso/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ivory/95 via-ivory/8 to-transparent" />
       </div>
 
       {/* Decorative circular badge */}
       <div className="absolute right-8 top-28 z-10 hidden lg:block lg:right-16 lg:top-32">
-        <div className="relative h-40 w-40 lg:h-48 lg:w-48">
+        <div className="relative h-44 w-44 lg:h-52 lg:w-52">
+          {/* Single outer ring — inner ring removed to avoid overlapping the spinning text */}
           <div className="absolute inset-0 rounded-full border border-ivory/20" />
-          <div className="absolute inset-4 rounded-full border border-ivory/12" />
+
+          {/* Spinning text — slightly inside the outer ring */}
           <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-spin-slow">
             <defs>
               <path
                 id="circle-path"
-                d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+                d="M 100,100 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"
               />
             </defs>
-            <text className="fill-ivory/55 text-[9px] uppercase tracking-wide-2" fontFamily="Mulish" fontWeight={500}>
+            <text fontFamily="Mulish" fontWeight={500} fontSize="9" fill="rgba(250,247,242,0.55)" letterSpacing="2">
               <textPath href="#circle-path" startOffset="0%">
                 Wysteria Works · Çark Caddesi · Adapazarı · Sakarya ·
               </textPath>
             </text>
           </svg>
+
+          {/* Center monogram */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-ivory/10 backdrop-blur-sm lg:h-24 lg:w-24">
-              <span className="font-serif text-3xl font-light italic text-ivory/90 lg:text-4xl">w</span>
+            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-ivory/10 backdrop-blur-sm lg:h-28 lg:w-28">
+              <span className="font-serif text-4xl font-light italic text-ivory/90">w</span>
             </div>
           </div>
         </div>
@@ -53,7 +56,7 @@ export default function Hero() {
             src={brandLogo}
             alt={siteConfig.name}
             width="320"
-            height="320"
+            height="128"
             fetchPriority="high"
             className="mb-7 h-20 w-48 object-cover object-center animate-fade-up sm:h-24 sm:w-56"
           />

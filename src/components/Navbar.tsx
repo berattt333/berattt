@@ -18,7 +18,7 @@ export default function Navbar() {
   const isHome = location.pathname === '/';
 
   const transparent = isHome && !scrolled && !open;
-  const bgColor = transparent ? 'bg-transparent' : 'bg-ivory/90 backdrop-blur-lg';
+  const bgColor = transparent ? 'bg-transparent' : 'bg-ivory/95 backdrop-blur-lg shadow-sm';
   const textColor = transparent ? 'text-ivory' : 'text-espresso';
   const borderColor = transparent ? 'border-transparent' : 'border-ivory-300/60';
 
@@ -40,7 +40,7 @@ export default function Navbar() {
                 src={brandLogo}
                 alt={siteConfig.name}
                 onError={() => setLogoFailed(true)}
-                className={`h-full w-full object-cover transition-all duration-300 ${transparent ? '' : 'brightness-0 opacity-75'}`}
+                className={`h-full w-full object-cover transition-all duration-300 ${transparent ? '' : 'brightness-0 opacity-70'}`}
               />
             )}
           </Link>
@@ -53,9 +53,9 @@ export default function Navbar() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
+                  className={`relative text-sm font-medium tracking-wide transition-colors duration-300 ${
                     active ? 'text-brass-dark' : textColor
-                  } hover:text-brass-dark`}
+                  } hover:text-brass-dark after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-x-0 after:bg-brass-dark after:transition-transform after:duration-300 ${active ? 'after:scale-x-100' : 'hover:after:scale-x-100'}`}
                 >
                   {link.label}
                 </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
             })}
             <Link
               to="/menu"
-              className="group inline-flex items-center gap-2 rounded-full bg-plum px-6 py-2.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600"
+              className="group inline-flex items-center gap-2 rounded-full bg-plum px-6 py-2.5 text-sm font-medium text-ivory transition-all duration-300 hover:bg-plum-600 hover:shadow-md"
             >
               Menüyü Keşfet
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
@@ -72,7 +72,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="rounded-full p-2 lg:hidden"
+            className={`rounded-full p-2.5 transition-colors lg:hidden ${transparent ? 'hover:bg-ivory/10' : 'hover:bg-ivory-200'}`}
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
             aria-expanded={open}
@@ -92,7 +92,7 @@ export default function Navbar() {
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-plum/30 backdrop-blur-sm" onClick={() => setOpen(false)} />
+        <div className="absolute inset-0 bg-espresso/40 backdrop-blur-sm" onClick={() => setOpen(false)} />
         <div
           className={`absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col bg-ivory px-8 pt-20 pb-8 shadow-2xl transition-transform duration-500 ${
             open ? 'translate-x-0' : 'translate-x-full'
@@ -107,7 +107,7 @@ export default function Navbar() {
                   to={link.to}
                   onClick={() => setOpen(false)}
                   className={`font-serif text-2xl font-medium transition-colors ${
-                    active ? 'text-brass-dark' : 'text-espresso hover:text-brass'
+                    active ? 'text-brass-dark' : 'text-espresso hover:text-brass-dark'
                   }`}
                 >
                   {link.label}
@@ -125,7 +125,7 @@ export default function Navbar() {
           </div>
           <div className="mt-auto border-t border-ivory-300 pt-6">
             <p className="text-sm text-mauve-dark">{siteConfig.addressShort}</p>
-            <a href={`tel:${siteConfig.phone}`} className="mt-1 block text-sm text-mauve-dark">
+            <a href={`tel:${siteConfig.phone}`} className="mt-1 block text-sm font-medium text-espresso/70 transition-colors hover:text-brass-dark">
               {siteConfig.phoneDisplay}
             </a>
           </div>
