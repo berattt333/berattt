@@ -71,12 +71,36 @@
   .waffle-ritual {
     position: relative;
     display: flex;
-    min-height: 190px;
+    min-height: 250px;
     align-items: center;
     justify-content: center;
     gap: 28px;
     margin: -8px auto 38px;
-    max-width: 760px;
+    max-width: 860px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .waffle-blob {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    width: min(58vw, 500px);
+    height: min(28vw, 235px);
+    border: 1px solid rgb(184 144 42 / 0.2);
+    border-radius: 61% 39% 54% 46% / 45% 58% 42% 55%;
+    background: linear-gradient(135deg, rgb(212 175 106 / 0.1), rgb(196 176 154 / 0.16));
+    transform: translate(-50%, -50%) rotate(-4deg);
+  }
+
+  .waffle-blob::after {
+    position: absolute;
+    inset: 16px 30px;
+    border: 1px solid rgb(184 144 42 / 0.14);
+    border-radius: 44% 56% 48% 52% / 58% 42% 58% 42%;
+    content: '';
+    transform: rotate(8deg);
   }
 
   .waffle-ritual-center {
@@ -137,6 +161,55 @@
     left: 0;
   }
 
+  .waffle-piece {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    display: block;
+    background-image: url('/assets/story/image copy.png');
+    background-repeat: no-repeat;
+    background-size: 1536px 1024px;
+    filter: drop-shadow(0 8px 6px rgb(44 26 14 / 0.14));
+    pointer-events: none;
+    transition: transform 120ms linear;
+  }
+
+  .waffle-piece-sprinkle {
+    width: 470px;
+    height: 465px;
+    margin: -232px 0 0 -235px;
+    background-position: -36px -70px;
+  }
+
+  .waffle-piece-chocolate {
+    width: 520px;
+    height: 490px;
+    margin: -245px 0 0 -260px;
+    background-position: -500px -48px;
+  }
+
+  .waffle-piece-fruit {
+    width: 470px;
+    height: 500px;
+    margin: -250px 0 0 -235px;
+    background-position: -1035px -72px;
+  }
+
+  .waffle-piece-cookie {
+    width: 570px;
+    height: 450px;
+    margin: -225px 0 0 -285px;
+    background-position: -185px -548px;
+  }
+
+  .waffle-piece-strawberry {
+    width: 610px;
+    height: 450px;
+    margin: -225px 0 0 -305px;
+    background-position: -760px -560px;
+  }
+
   .scroll-cue {
     animation: scrollCue 1.8s ease-in-out infinite;
   }
@@ -149,10 +222,15 @@
 
 @media (max-width: 640px) {
   .waffle-ritual {
-    min-height: 156px;
+    min-height: 190px;
     gap: 12px;
     margin-top: 0;
     margin-bottom: 30px;
+  }
+
+  .waffle-blob {
+    width: 320px;
+    height: 140px;
   }
 
   .waffle-ritual-center {
@@ -162,6 +240,10 @@
 
   .waffle-ritual-line {
     width: 46px;
+  }
+
+  .waffle-piece {
+    background-size: 1536px 1024px;
   }
 }
 
