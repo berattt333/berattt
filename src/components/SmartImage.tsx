@@ -33,7 +33,6 @@ export default function SmartImage({
           alt={alt}
           loading={loading}
           decoding="async"
-          decoding="async"
           onLoad={() => setLoaded(true)}
           onError={() => setError(true)}
           style={objectPosition !== 'center' ? { objectPosition } : undefined}

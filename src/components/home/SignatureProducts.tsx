@@ -39,7 +39,6 @@ export default function SignatureProducts() {
                     aspect="aspect-[5/4]"
                     loading="lazy"
                     decoding="async"
-                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute right-5 top-5 rounded-full bg-plum/90 px-4 py-2 text-ivory backdrop-blur-sm">

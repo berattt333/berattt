@@ -1,9 +1,6 @@
 export const brandLogo = '/assets/images/wysteria-clear.png';
 export const brandMark = '/assets/images/mark.png';
 
-export const brandLogo = '/assets/images/wysteria-clear.png';
-export const brandMark = '/assets/images/mark.png';
-
 export const siteConfig = {
   name: 'Wysteria Works',
   tagline: 'Küçük bir mola, unutulmaz bir tat.',
