@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUp, Instagram } from 'lucide-react';
 import { brandMark, siteConfig } from '@/data/site';
@@ -10,6 +11,8 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const [logoFailed, setLogoFailed] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -41,11 +44,18 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center" aria-label={`${siteConfig.name} ana sayfa`}>
-              <img
-                src={brandMark}
-                alt={siteConfig.name}
-                className="h-16 w-24 object-contain object-left sm:h-20 sm:w-32"
-              />
+              {logoFailed ? (
+                <span className="font-serif text-2xl font-medium tracking-tight">
+                  <span className="italic">Wysteria</span> Works
+                </span>
+              ) : (
+                <img
+                  src={brandMark}
+                  alt={siteConfig.name}
+                  onError={() => setLogoFailed(true)}
+                  className="h-16 w-24 object-contain object-left sm:h-20 sm:w-32"
+                />
+              )}
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory/60">
               Çark Caddesi'nde günlük taze fırınlanmış pastalar, özenle demlenen

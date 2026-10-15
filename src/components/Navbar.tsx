@@ -12,6 +12,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
   const scrolled = useScrollPosition();
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -30,11 +31,18 @@ export default function Navbar() {
             className="flex h-9 w-[9.5rem] items-center sm:h-10 sm:w-[10.5rem]"
             aria-label={`${siteConfig.name} ana sayfa`}
           >
-            <img
-              src={brandLogo}
-              alt={siteConfig.name}
-              className={`h-full w-full object-cover transition-all duration-300 ${transparent ? '' : 'brightness-0 opacity-75'}`}
-            />
+            {logoFailed ? (
+              <span className={`font-serif text-xl font-medium tracking-tight ${transparent ? 'text-ivory' : 'text-espresso'}`}>
+                <span className="italic">Wysteria</span>
+              </span>
+            ) : (
+              <img
+                src={brandLogo}
+                alt={siteConfig.name}
+                onError={() => setLogoFailed(true)}
+                className={`h-full w-full object-cover transition-all duration-300 ${transparent ? '' : 'brightness-0 opacity-75'}`}
+              />
+            )}
           </Link>
 
           {/* Desktop nav */}
