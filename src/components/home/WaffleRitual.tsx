@@ -61,7 +61,7 @@ export default function WaffleRitual() {
             key={piece.className}
             className={piece.className}
             aria-hidden="true"
-            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.32 + progress * 0.04})` }}
+            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.35 + progress * 0.04})` }}
           />
         );
       })}
