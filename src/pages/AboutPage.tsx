@@ -12,7 +12,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="Hikâyemiz"
         title="Bir ritüelin doğuşu"
-        subtitle="Wysteria Works, bir kahveden fazlasıdır. Bir durak, bir nefes, bir geleneğin başlangıcı."
+        subtitle="Wysteria Works, çıtır waffle'ı iyi kahveyle buluşturan sıcak bir durak; tatlı bir molanın hikâyesi."
         crumb="Hikâyemiz"
       />
 
@@ -23,9 +23,9 @@ export default function AboutPage() {
             <OrnamentalRule className="mb-8" />
             <p className="text-balance text-2xl font-light leading-relaxed text-espresso sm:text-3xl lg:text-4xl lg:leading-relaxed">
               İnanıyoruz ki iyi bir kahve sadece bir içecek değil,
-              günün ritüelidir. Bir kruvasan sadece bir pastı değil,
-              sabahın vaadidir. Burada sunduğumuz, sıcak bir anın
-              tadıdır.
+              günün ritüelidir. Waffle ise sadece bir tatlı değil,
+              paylaşmanın en sıcak hâlidir. Burada sunduğumuz, çıtır bir
+              lokmayla uzayan güzel bir andır.
             </p>
           </Reveal>
         </div>
@@ -57,13 +57,14 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-base leading-relaxed text-ivory/65">
                 Her çekirdeği tek köken menşeisiyle, özenle seçiyoruz.
-                V60 yöntemiyle, suyun sıcaklığını ve akışını kontrol
-                ederek, her fincanda meyve ve çiçek notalarını ortaya
-                çıkarıyoruz.
+                V60 yöntemiyle suyun sıcaklığını ve akışını kontrol
+                ederek, waffle'ın tatlı dokusuna eşlik eden meyve ve
+                çiçek notalarını her fincanda ortaya çıkarıyoruz.
               </p>
               <p className="mt-4 text-base leading-relaxed text-ivory/65">
-                Bu, hızlı bir demleme değil. Sabırlı bir süreç. Ve
-                sonuç, beklemeye değer.
+                Waffle hamurunu da aynı özenle hazırlıyoruz: dışı çıtır,
+                içi yumuşak, üzerine gelen her malzemeyle dengeli. Bu,
+                hızlı bir servis değil; beklemeye değer tatlı bir ritüel.
               </p>
             </Reveal>
           </div>
@@ -81,14 +82,14 @@ export default function AboutPage() {
               </h2>
               <OrnamentalRule className="mt-6" />
               <p className="mt-6 text-base leading-relaxed text-espresso/60">
-                Mutfak ekibimiz, günün ilk ışıklarında hamuru yoğurmaya
-                başlar. Tereyağının kat kat açılması, mayanın sabırla
-                bekletilmesi, fırının ısı dengesi — hepsi bir denge.
+                Mutfak ekibimiz, günün ilk ışıklarında waffle hamurunu
+                hazırlamaya başlar. Tereyağının dengesi, pişirme süresi,
+                meyvenin tazeliği ve çikolatanın dokusu — hepsi bir denge.
               </p>
               <p className="mt-4 text-base leading-relaxed text-espresso/60">
-                Kruvasanlarımız, ekmeğimiz ve pastalarımız, kapımızı
-                açtığımızda misafirlerimizi karşılıyor. Sıcacık, kokulu
-                ve taze.
+                Waffle'larımız siparişe göre pişer; çilek, muz, fındık,
+                çikolata ve dondurmayla kişilik kazanır. Yanına koyduğumuz
+                kahve de taze demlenir. Sıcacık, çıtır ve taze.
               </p>
             </Reveal>
             <Reveal delay={1} className="lg:col-span-6 lg:col-start-7">
@@ -104,7 +105,7 @@ export default function AboutPage() {
                 <div className="absolute -bottom-6 -right-2 w-28 overflow-hidden rounded-2xl border-4 border-ivory sm:w-36 lg:-right-8 lg:w-48">
                   <SmartImage
                     src={storyImages.detail}
-                    alt="Dilimlenmiş kruvasanlar"
+                    alt="Meyve ve çikolata ile hazırlanan waffle"
                     aspect="aspect-square"
                     loading="lazy"
                   />
@@ -130,7 +131,7 @@ export default function AboutPage() {
         <Reveal className="relative mx-auto max-w-3xl px-6 text-center lg:px-12">
           <OrnamentalRule className="mb-8" />
           <p className="text-balance text-2xl font-light italic leading-relaxed text-ivory sm:text-3xl lg:text-4xl lg:leading-relaxed">
-            "Bir fincan kahve, bir ömür dostluğun başlangıcı olabilir."
+            "İyi bir kahve, çıtır bir waffle ve uzun bir sohbet; güzel bir günün en basit tarifi."
           </p>
           <p className="mt-6 text-xs uppercase tracking-wide-3 text-brass-light">
             Wysteria Works Felsefesi
@@ -145,7 +146,7 @@ export default function AboutPage() {
             <div className="lg:col-span-7">
               <Eyebrow>Sizi Bekliyoruz</Eyebrow>
               <h2 className="mt-4 text-balance text-3xl font-light leading-tight text-espresso sm:text-4xl lg:text-5xl">
-                Bir fincan için uğrayın, bir an için kalın
+                Bir waffle için uğrayın, kahveyle biraz daha kalın
               </h2>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-espresso/60">
                 Menümüzü keşfedin veya Çark Caddesi'nde bizi ziyaret

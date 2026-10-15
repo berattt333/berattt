@@ -20,15 +20,16 @@ export default function StorySection() {
               başlar.
             </h2>
             <p className="mt-8 text-base leading-relaxed text-ivory/65">
-              Wysteria Works, Çark Caddesi'nin tarih kokan taşlarının
-              arasında doğdu. Sabahın ilk ışıklarında demlenen kahve,
-              fırından yeni çıkan kruvasanın kokusu, bir fincan başında
-              kurulan sohbet...
+              Wysteria Works, waffle'ın çıtır kenarlarıyla iyi kahvenin
+              sakin ritmini aynı masada buluşturmak için doğdu. Çark
+              Caddesi'nde başlayan bu hikâye, her sabah taze hazırlanan
+              hamurla ve özenle seçilen çekirdeklerle şekillendi.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ivory/65">
-              Burada zaman yavaşlar. Her detay özenle seçilir: çekirdeğin
-              menşei, hamurun mayalanma süresi, tabağın dokusu. Sadece bir
-              kahve değil, bir an sunarız.
+              Waffle'larımızı siparişe göre pişiriyor, meyve ve çikolata
+              dokunuşlarıyla tamamlıyor; yanına da fincanın karakterine
+              yakışan kahveyi koyuyoruz. Çünkü bizim için güzel bir buluşma,
+              çıtır bir lokma ve iyi demlenmiş bir kahveyle başlar.
             </p>
             <Link
               to="/about"

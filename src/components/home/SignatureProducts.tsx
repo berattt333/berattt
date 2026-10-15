@@ -4,6 +4,7 @@ import { products } from '@/data/site';
 import Reveal from '@/components/Reveal';
 import SmartImage from '@/components/SmartImage';
 import { Eyebrow, OrnamentalRule } from '@/components/SectionHeading';
+import WaffleRitual from '@/components/home/WaffleRitual';
 
 export default function SignatureProducts() {
   const featured = products
@@ -13,6 +14,8 @@ export default function SignatureProducts() {
   return (
     <section className="relative bg-ivory px-6 py-24 lg:px-12 lg:py-32">
       <div className="mx-auto max-w-[1400px]">
+        <WaffleRitual />
+
         {/* Header */}
         <div className="mb-14 text-center">
           <Reveal>

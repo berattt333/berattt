@@ -68,6 +68,123 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
 
+  .waffle-ritual {
+    position: relative;
+    display: flex;
+    min-height: 220px;
+    align-items: center;
+    justify-content: center;
+    margin: -20px auto 54px;
+    max-width: 900px;
+  }
+
+  .waffle-ritual-center {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    background: rgb(250 247 242 / 0.9);
+    box-shadow: 0 8px 32px rgb(90 62 43 / 0.08);
+    backdrop-filter: blur(5px);
+  }
+
+  .waffle-ritual-word {
+    color: #5A3E2B;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 0.95;
+  }
+
+  .waffle-ritual-kicker {
+    color: #7A5E10;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+  }
+
+  .waffle-ritual-line {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    height: 1px;
+    width: min(34vw, 250px);
+    background: linear-gradient(90deg, transparent, rgb(184 144 42 / 0.65));
+  }
+
+  .waffle-ritual-line::after {
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border: 1px solid rgb(184 144 42 / 0.7);
+    content: '';
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .waffle-ritual-line-left {
+    right: calc(50% + 112px);
+  }
+
+  .waffle-ritual-line-left::after {
+    right: 0;
+  }
+
+  .waffle-ritual-line-right {
+    left: calc(50% + 112px);
+    transform: scaleX(-1);
+  }
+
+  .waffle-piece {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    width: clamp(92px, 13vw, 148px);
+    aspect-ratio: 1.25;
+    background-image: url('/assets/home/hero/image.png');
+    background-repeat: no-repeat;
+    background-size: 385% 290%;
+    filter: drop-shadow(0 12px 8px rgb(44 26 14 / 0.16));
+    pointer-events: none;
+    transition: transform 120ms linear;
+  }
+
+  .waffle-piece-sprinkle {
+    top: 5%;
+    left: 26%;
+    background-position: 0% 0%;
+  }
+
+  .waffle-piece-chocolate {
+    top: 0;
+    left: 42%;
+    background-position: 50% 0%;
+  }
+
+  .waffle-piece-fruit {
+    top: 7%;
+    right: 25%;
+    background-position: 100% 0%;
+  }
+
+  .waffle-piece-cookie {
+    bottom: 3%;
+    left: 34%;
+    background-position: 20% 100%;
+  }
+
+  .waffle-piece-strawberry {
+    right: 34%;
+    bottom: 0;
+    background-position: 82% 100%;
+  }
+
   .scroll-cue {
     animation: scrollCue 1.8s ease-in-out infinite;
   }
@@ -91,6 +208,10 @@
 
   .scroll-cue {
     animation: none;
+  }
+
+  .waffle-piece {
+    transition: none;
   }
 
   .animate-fade-up,
