@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-195, -120], end: [-390, -255], rotate: -18 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -155], end: [0, -315], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [195, -116], end: [390, -245], rotate: 18 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [-185, 125], end: [-370, 265], rotate: 16 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [185, 125], end: [375, 270], rotate: -16 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-245, -125], end: [-405, -260], rotate: -18 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [0, -175], end: [0, -315], rotate: 8 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [245, -120], end: [405, -250], rotate: 18 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [-220, 145], end: [-375, 270], rotate: 16 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [220, 145], end: [380, 275], rotate: -16 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
@@ -41,7 +41,8 @@ export default function WaffleRitual() {
     };
   }, []);
 
-  const spreadFactor = clamp(window.innerWidth / 780, 0.68, 1);
+  const spreadFactor = clamp(window.innerWidth / 980, 0.7, 1);
+  const pieceScale = clamp(window.innerWidth / 1100, 0.62, 1);
 
   return (
     <div ref={sectionRef} className="waffle-ritual" aria-label="Wysteria waffle seçkisi">
@@ -64,7 +65,7 @@ export default function WaffleRitual() {
             key={piece.className}
             className={piece.className}
             aria-hidden="true"
-            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})` }}
+            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${pieceScale * scale})` }}
           />
         );
       })}
