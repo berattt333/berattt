@@ -83,29 +83,30 @@
 
   .waffle-blob {
     position: absolute;
-    left: 50%;
+    right: 7%;
     top: 50%;
     z-index: 0;
-    width: min(58vw, 500px);
-    height: min(28vw, 235px);
-    border: 1px solid rgb(184 144 42 / 0.2);
-    border-radius: 61% 39% 54% 46% / 45% 58% 42% 55%;
-    background: linear-gradient(135deg, rgb(212 175 106 / 0.1), rgb(196 176 154 / 0.16));
-    transform: translate(-50%, -50%) rotate(-4deg);
+    width: min(42vw, 360px);
+    height: min(31vw, 230px);
+    border-radius: 58% 42% 63% 37% / 42% 55% 45% 58%;
+    background: #f0e8da;
+    box-shadow: inset 22px 18px 0 rgb(250 247 242 / 0.45), 0 18px 34px rgb(90 62 43 / 0.05);
+    opacity: 0.72;
+    transform: translateY(-50%) rotate(12deg);
   }
 
   .waffle-blob::after {
     position: absolute;
-    inset: 16px 30px;
-    border: 1px solid rgb(184 144 42 / 0.14);
+    inset: 22px 28px;
+    border: 1px solid rgb(90 62 43 / 0.12);
     border-radius: 44% 56% 48% 52% / 58% 42% 58% 42%;
     content: '';
-    transform: rotate(8deg);
+    transform: rotate(-9deg);
   }
 
   .waffle-ritual-center {
     position: relative;
-    z-index: 1;
+    z-index: 5;
     display: flex;
     min-width: 190px;
     flex-direction: column;
@@ -165,7 +166,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 3;
+    z-index: 2;
     display: block;
     background-image: url('/assets/story/image copy.png');
     background-repeat: no-repeat;
@@ -229,8 +230,9 @@
   }
 
   .waffle-blob {
-    width: 320px;
-    height: 140px;
+    right: -18px;
+    width: 235px;
+    height: 128px;
   }
 
   .waffle-ritual-center {

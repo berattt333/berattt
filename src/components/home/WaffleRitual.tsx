@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-105, -18], end: [-250, -52], rotate: -10 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [-34, -34], end: [-48, -112], rotate: -4 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [105, -18], end: [250, -52], rotate: 10 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [-78, 30], end: [-190, 76], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [78, 30], end: [190, 76], rotate: -8 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-190, -72], end: [-320, -72], rotate: -10 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [190, -72], end: [320, -72], rotate: 10 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [-190, 60], end: [-320, 60], rotate: 8 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [190, 60], end: [320, 60], rotate: -8 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [0, -150], end: [0, -172], rotate: 0 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
@@ -63,7 +63,7 @@ export default function WaffleRitual() {
             key={piece.className}
             className={piece.className}
             aria-hidden="true"
-            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.32 + progress * 0.04})` }}
+            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.24 + progress * 0.03})` }}
           />
         );
       })}
