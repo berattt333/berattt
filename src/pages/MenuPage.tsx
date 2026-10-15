@@ -7,6 +7,7 @@ import Reveal from '@/components/Reveal';
 
 const categoryIcons: Record<string, React.ReactNode> = {
   'Kahveler': <Coffee size={14} />,
+  'Waffle\'lar': <Cake size={14} />,
   'Soğuk İçecekler': <Snowflake size={14} />,
   'Sıcak İçecekler': <Flame size={14} />,
   'Tatlılar': <Cake size={14} />,
@@ -30,7 +31,7 @@ export default function MenuPage() {
       <PageHeader
         eyebrow="Dijital Menü"
         title="Lezzetlerimiz"
-        subtitle="Kahveden tatlıya, fırından yeni çıkan her şey. Mevsime göre güncellenir."
+        subtitle="Çıtır waffle çeşitlerinden özenle demlenen kahvelere, tatlı molanız için her şey."
         crumb="Menü"
       />
 

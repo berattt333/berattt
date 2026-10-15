@@ -3,7 +3,7 @@ export const brandMark = '/mark.png';
 
 export const siteConfig = {
   name: 'Wysteria Works',
-  tagline: 'Küçük bir mola, unutulmaz bir tat.',
+  tagline: 'Waffle keyfi, iyi kahveyle tamamlanır.',
   address: 'Çark Caddesi No. 54, Adapazarı, Sakarya',
   addressShort: 'Çark Caddesi, Adapazarı, Sakarya',
   phone: '+90 554 054 54',
@@ -165,6 +165,37 @@ export const products: Product[] = [
     alt: 'Sıcak çikolata',
   },
 
+  // --- Waffle'lar ---
+  {
+    id: 'waffle',
+    name: 'Çilekli Meyveli Waffle',
+    category: 'Waffle\'lar',
+    description: 'Çıtır waffle, muz, çilek, vanilyalı dondurma ve akçaağaç şurubu.',
+    price: 145,
+    image: 'https://images.pexels.com/photos/17558647/pexels-photo-17558647.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Muz, çilek ve dondurmalı waffle',
+    featured: true,
+  },
+  {
+    id: 'chocolate-waffle',
+    name: 'Bitter Çikolatalı Waffle',
+    category: 'Waffle\'lar',
+    description: 'Bitter çikolata sosu, muz, çilek ve kavrulmuş fındıkla servis edilir.',
+    price: 155,
+    image: 'https://images.pexels.com/photos/12148861/pexels-photo-12148861.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Çikolata soslu waffle ve dondurma',
+    featured: true,
+  },
+  {
+    id: 'classic-waffle',
+    name: 'Klasik Brüksel Waffle',
+    category: 'Waffle\'lar',
+    description: 'Ilık waffle, pudra şekeri ve seçtiğiniz meyve sosuyla sade bir klasik.',
+    price: 125,
+    image: 'https://images.pexels.com/photos/1131810/pexels-photo-1131810.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
+    alt: 'Pudra şekerli klasik waffle',
+  },
+
   // --- Tatlılar ---
   {
     id: 'chocolate-cake',
@@ -202,19 +233,9 @@ export const products: Product[] = [
     image: 'https://images.pexels.com/photos/31145291/pexels-photo-31145291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
     alt: 'Fıstıklı tatlı',
   },
-  {
-    id: 'waffle',
-    name: 'Waffle',
-    category: 'Tatlılar',
-    description: 'Çıtır waffle, muz, çilek ve vanilyalı dondurma; akçaağaç şurubu.',
-    price: 145,
-    image: 'https://images.pexels.com/photos/17558647/pexels-photo-17558647.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpr=1',
-    alt: 'Muz ve çilekli waffle',
-    featured: true,
-  },
 ];
 
-export const categories = ['Kahveler', 'Soğuk İçecekler', 'Sıcak İçecekler', 'Tatlılar'];
+export const categories = ['Kahveler', 'Waffle\'lar', 'Soğuk İçecekler', 'Sıcak İçecekler', 'Tatlılar'];
 
 export const galleryImages = [
   {

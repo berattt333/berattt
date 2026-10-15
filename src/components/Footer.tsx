@@ -58,8 +58,8 @@ export default function Footer() {
               )}
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory/60">
-              Çark Caddesi'nde günlük taze fırınlanmış pastalar, özenle demlenen
-              kahveler ve sezonun tatlıları. Burada her lokma bir ritüeldir.
+              Çark Caddesi'nde çıtır waffle'lar, özenle demlenen kahveler
+              ve tatlı molalar. Burada her lokma bir ritüeldir.
             </p>
             <a
               href={siteConfig.instagramUrl}
