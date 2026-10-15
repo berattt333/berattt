@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Coffee, Snowflake, Flame, Cake } from 'lucide-react';
-import { products, categories, siteConfig } from '@/data/site';
+import { products, categories } from '@/data/site';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 

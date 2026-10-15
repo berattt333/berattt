@@ -34,10 +34,6 @@ export type Product = {
   featured?: boolean;
 };
 
-// Helper for image URLs at smaller sizes (menu thumbnails)
-const img = (id: string, w = 400, h = 400) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&h=${h}&dpr=1`;
-
 export const products: Product[] = [
   // --- Kahveler ---
   {
