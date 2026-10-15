@@ -1,5 +1,5 @@
-export const brandLogo = '/assets/images/wysteria-clear.png';
-export const brandMark = '/assets/images/mark.png';
+export const brandLogo = '/wysteria-clear.png';
+export const brandMark = '/mark.png';
 
 export const siteConfig = {
   name: 'Wysteria Works',
