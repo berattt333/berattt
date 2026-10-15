@@ -71,37 +71,14 @@
   .waffle-ritual {
     position: relative;
     display: flex;
-    min-height: 250px;
+    min-height: 360px;
     align-items: center;
     justify-content: center;
     gap: 28px;
     margin: -8px auto 38px;
-    max-width: 860px;
+    max-width: 1180px;
     overflow: hidden;
     isolation: isolate;
-  }
-
-  .waffle-blob {
-    position: absolute;
-    right: 7%;
-    top: 50%;
-    z-index: 0;
-    width: min(42vw, 360px);
-    height: min(31vw, 230px);
-    border-radius: 58% 42% 63% 37% / 42% 55% 45% 58%;
-    background: #f0e8da;
-    box-shadow: inset 22px 18px 0 rgb(250 247 242 / 0.45), 0 18px 34px rgb(90 62 43 / 0.05);
-    opacity: 0.72;
-    transform: translateY(-50%) rotate(12deg);
-  }
-
-  .waffle-blob::after {
-    position: absolute;
-    inset: 22px 28px;
-    border: 1px solid rgb(90 62 43 / 0.12);
-    border-radius: 44% 56% 48% 52% / 58% 42% 58% 42%;
-    content: '';
-    transform: rotate(-9deg);
   }
 
   .waffle-ritual-center {
@@ -171,44 +148,44 @@
     background-image: url('/assets/story/image copy.png');
     background-repeat: no-repeat;
     background-size: 1536px 1024px;
-    filter: drop-shadow(0 8px 6px rgb(44 26 14 / 0.14));
+    filter: drop-shadow(0 10px 8px rgb(44 26 14 / 0.16));
     pointer-events: none;
-    transition: transform 120ms linear;
+    transition: transform 180ms ease-out;
   }
 
   .waffle-piece-sprinkle {
-    width: 470px;
-    height: 465px;
-    margin: -232px 0 0 -235px;
-    background-position: -36px -70px;
+    width: 480px;
+    height: 475px;
+    margin: -238px 0 0 -240px;
+    background-position: -30px -82px;
   }
 
   .waffle-piece-chocolate {
-    width: 520px;
-    height: 490px;
-    margin: -245px 0 0 -260px;
-    background-position: -500px -48px;
+    width: 515px;
+    height: 485px;
+    margin: -243px 0 0 -258px;
+    background-position: -505px -78px;
   }
 
   .waffle-piece-fruit {
-    width: 470px;
-    height: 500px;
-    margin: -250px 0 0 -235px;
-    background-position: -1035px -72px;
+    width: 475px;
+    height: 490px;
+    margin: -245px 0 0 -238px;
+    background-position: -1040px -84px;
   }
 
   .waffle-piece-cookie {
-    width: 570px;
-    height: 450px;
-    margin: -225px 0 0 -285px;
-    background-position: -185px -548px;
+    width: 555px;
+    height: 430px;
+    margin: -215px 0 0 -278px;
+    background-position: -195px -565px;
   }
 
   .waffle-piece-strawberry {
-    width: 610px;
-    height: 450px;
-    margin: -225px 0 0 -305px;
-    background-position: -760px -560px;
+    width: 585px;
+    height: 405px;
+    margin: -203px 0 0 -293px;
+    background-position: -775px -580px;
   }
 
   .scroll-cue {
@@ -223,16 +200,10 @@
 
 @media (max-width: 640px) {
   .waffle-ritual {
-    min-height: 190px;
+    min-height: 260px;
     gap: 12px;
     margin-top: 0;
     margin-bottom: 30px;
-  }
-
-  .waffle-blob {
-    right: -18px;
-    width: 235px;
-    height: 128px;
   }
 
   .waffle-ritual-center {

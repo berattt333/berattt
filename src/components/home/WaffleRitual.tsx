@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 const pieces = [
-  { className: 'waffle-piece waffle-piece-sprinkle', start: [-190, -72], end: [-320, -72], rotate: -10 },
-  { className: 'waffle-piece waffle-piece-chocolate', start: [190, -72], end: [320, -72], rotate: 10 },
-  { className: 'waffle-piece waffle-piece-fruit', start: [-190, 60], end: [-320, 60], rotate: 8 },
-  { className: 'waffle-piece waffle-piece-cookie', start: [190, 60], end: [320, 60], rotate: -8 },
-  { className: 'waffle-piece waffle-piece-strawberry', start: [0, -150], end: [0, -172], rotate: 0 },
+  { className: 'waffle-piece waffle-piece-sprinkle', start: [-205, -84], end: [-385, -125], rotate: 135 },
+  { className: 'waffle-piece waffle-piece-chocolate', start: [205, -84], end: [385, -125], rotate: -135 },
+  { className: 'waffle-piece waffle-piece-fruit', start: [214, 92], end: [390, 145], rotate: -112 },
+  { className: 'waffle-piece waffle-piece-cookie', start: [-214, 92], end: [-390, 145], rotate: 112 },
+  { className: 'waffle-piece waffle-piece-strawberry', start: [0, -164], end: [0, -270], rotate: 180 },
 ] as const;
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
@@ -44,7 +44,6 @@ export default function WaffleRitual() {
 
   return (
     <div ref={sectionRef} className="waffle-ritual" aria-label="Wysteria tatlı bir mola">
-      <div className="waffle-blob" aria-hidden="true" />
       <span className="waffle-ritual-line waffle-ritual-line-left" aria-hidden="true" />
       <div className="waffle-ritual-center">
         <span className="waffle-ritual-kicker">Birlikte güzel</span>
@@ -63,7 +62,7 @@ export default function WaffleRitual() {
             key={piece.className}
             className={piece.className}
             aria-hidden="true"
-            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.24 + progress * 0.03})` }}
+            style={{ transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${0.32 + progress * 0.04})` }}
           />
         );
       })}
