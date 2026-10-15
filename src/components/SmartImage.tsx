@@ -19,7 +19,7 @@ export default function SmartImage({
   const [error, setError] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden ${aspect} ${className}`}>
+    <div className={`relative w-full overflow-hidden ${aspect} ${className}`}>
       {!loaded && !error && (
         <div className="absolute inset-0 animate-pulse bg-mauve/20" />
       )}
