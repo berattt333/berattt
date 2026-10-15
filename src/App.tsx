@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import ScrollProgress from '@/components/ScrollProgress';
 import PageMeta from '@/components/PageMeta';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import HomePage from '@/pages/HomePage';
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <PageMeta />
+      <ScrollProgress />
       <ScrollToTop />
       <Navbar />
       <main id="main-content">

@@ -6,7 +6,9 @@ import SmartImage from '@/components/SmartImage';
 import { Eyebrow, OrnamentalRule } from '@/components/SectionHeading';
 
 export default function SignatureProducts() {
-  const featured = products.filter((p) => p.featured);
+  const featured = products
+    .filter((p) => p.featured)
+    .sort((a, b) => (a.id === 'waffle' ? -1 : b.id === 'waffle' ? 1 : 0));
 
   return (
     <section className="relative bg-ivory px-6 py-24 lg:px-12 lg:py-32">
@@ -14,14 +16,14 @@ export default function SignatureProducts() {
         {/* Header */}
         <div className="mb-14 text-center">
           <Reveal>
-            <Eyebrow>Sezonun Seçkisi</Eyebrow>
+            <Eyebrow>Wysteria'nın Favorisi</Eyebrow>
             <h2 className="mt-4 text-balance text-4xl font-light leading-tight text-espresso sm:text-5xl lg:text-6xl">
-              İmza lezzetlerimiz
+              Waffle ve kahve ritüeli
             </h2>
             <OrnamentalRule className="mt-6" />
             <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-espresso/55">
-              Her biri özenle hazırlanır, mevsimle değişir. Wysteria
-              Works'ün ruhunu yansıtan birkaç özel seçki.
+              Dışı çıtır, içi yumuşak waffle'larımızı iyi kahve ve soğuk
+              içeceklerle eşleştirdik. Günün en tatlı molası burada başlar.
             </p>
           </Reveal>
         </div>
@@ -48,7 +50,7 @@ export default function SignatureProducts() {
                   {/* Popular badge */}
                   <div className="absolute left-5 top-5 flex items-center gap-1 rounded-full bg-brass/90 px-3 py-1.5 text-ivory shadow-md backdrop-blur-sm">
                     <Star size={10} fill="currentColor" />
-                    <span className="text-[10px] font-semibold uppercase tracking-wide">Popüler</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wide">{product.id === 'waffle' ? 'İmza' : 'Popüler'}</span>
                   </div>
                 </div>
 

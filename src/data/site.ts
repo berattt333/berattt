@@ -258,7 +258,7 @@ export const storyImages = {
   detail: 'https://images.pexels.com/photos/13428169/pexels-photo-13428169.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',
 };
 
-export const heroImage = 'https://images.pexels.com/photos/37095935/pexels-photo-37095935.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1440&dpr=1';
+export const heroImage = 'https://images.pexels.com/photos/1131810/pexels-photo-1131810.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1440&dpr=1';
 
 export const aboutImages = {
   hero: 'https://images.pexels.com/photos/39784929/pexels-photo-39784929.jpeg?auto=compress&cs=tinysrgb&w=940&h=650&dpr=1',

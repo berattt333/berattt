@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { brandLogo, heroImage, siteConfig } from '@/data/site';
 
 export default function Hero() {
@@ -68,18 +68,17 @@ export default function Hero() {
             className="mt-5 animate-fade-up text-balance text-5xl font-light leading-[1.05] text-ivory drop-shadow-md sm:text-6xl lg:text-7xl"
             style={{ animationDelay: '0.1s' }}
           >
-            Küçük bir mola,
+            Waffle keyfi,
             <br />
-            <span className="italic font-normal text-brass-light">unutulmaz</span> bir tat.
+            <span className="italic font-normal text-brass-light">iyi kahveyle</span> tamamlanır.
           </h1>
 
           <p
             className="mt-7 max-w-md animate-fade-up text-base leading-relaxed text-ivory/80 drop-shadow-sm"
             style={{ animationDelay: '0.2s' }}
           >
-            Adapazarı'nın kalbinde, her fincan bir ritüel. Günlük taze
-            fırınlanan pastalarımız ve özenle demlenen kahvelerimizle
-            sizi bekliyoruz.
+            Adapazarı'nın kalbinde, çıtır waffle'lar ve özenle demlenen
+            kahveler için sıcak, tatlı bir mola sizi bekliyor.
           </p>
 
           <div
@@ -101,6 +100,11 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="scroll-cue absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-ivory/70 sm:flex">
+        <span className="text-[10px] font-medium uppercase tracking-wide-3">Keşfet</span>
+        <ArrowDown size={16} />
       </div>
     </section>
   );

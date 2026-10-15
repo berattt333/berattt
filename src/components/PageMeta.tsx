@@ -5,11 +5,11 @@ import { siteConfig } from '@/data/site';
 const pageMeta: Record<string, { title: string; description: string }> = {
   '/': {
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
-    description: 'Adapazarı, Çark Caddesi\'nde günlük taze fırınlanan pastalar, özenle demlenen kahveler ve sezonun tatlıları.',
+    description: 'Adapazarı Çark Caddesi\'nde çıtır waffle\'lar, özenle demlenen kahveler ve tatlı molalar.',
   },
   '/menu': {
     title: `Menü — ${siteConfig.name}`,
-    description: 'Kahveler, soğuk içecekler, fırından ve tatlılar. Tüm lezzetlerimiz ve fiyatları.',
+    description: 'Çıtır waffle\'lar, kahveler, soğuk içecekler ve tatlılar. Tüm lezzetlerimiz ve fiyatları.',
   },
   '/about': {
     title: `Hikâyemiz — ${siteConfig.name}`,
