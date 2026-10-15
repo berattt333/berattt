@@ -47,18 +47,18 @@ export default function MenuPage() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-300 ${
+                    className={`group inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                       active
                         ? 'bg-plum text-ivory shadow-sm'
                         : 'bg-ivory-200 text-espresso/65 hover:bg-mauve/25 hover:text-espresso'
                     }`}
                     aria-pressed={active}
                   >
-                    <span className={active ? 'text-ivory/80' : 'text-espresso/40'}>
+                    <span className={`transition-colors duration-300 ${active ? 'text-ivory/80' : 'text-espresso/40 group-hover:text-brass-dark'}`}>
                       {categoryIcons[cat]}
                     </span>
                     {cat}
-                    <span className={`rounded-full px-1.5 py-0.5 text-[10px] ${active ? 'bg-ivory/20 text-ivory/80' : 'bg-espresso/10 text-espresso/40'}`}>
+                    <span className={`rounded-full px-1.5 py-0.5 text-[10px] transition-colors duration-300 ${active ? 'bg-ivory/20 text-ivory/80' : 'bg-espresso/10 text-espresso/40 group-hover:bg-brass/15 group-hover:text-brass-dark'}`}>
                       {categoryCounts[cat]}
                     </span>
                   </button>
@@ -72,13 +72,13 @@ export default function MenuPage() {
             {filteredProducts.map((product, index) => (
               <article
                 key={product.id}
-                className="group flex items-center gap-4 py-5 opacity-0 sm:gap-6 sm:py-6"
+                className="group -mx-3 flex items-center gap-4 rounded-2xl px-3 py-5 opacity-0 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ivory-50 hover:shadow-[0_10px_28px_rgba(44,26,14,0.07)] sm:gap-6 sm:py-6"
                 style={{
                   animation: `fadeUp 0.5s ease-out ${index * 0.05}s forwards`,
                 }}
               >
                 {/* Thumbnail */}
-                <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-ivory-300/60 transition-all duration-300 group-hover:ring-brass/40 sm:h-20 sm:w-20">
+                <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-ivory-300/60 shadow-sm transition-all duration-300 group-hover:ring-brass/50 group-hover:shadow-md sm:h-20 sm:w-20">
                   <img
                     src={product.image}
                     alt={product.alt}
@@ -108,7 +108,7 @@ export default function MenuPage() {
 
                 {/* Price */}
                 <div className="flex-shrink-0 text-right">
-                  <span className="font-serif text-xl font-medium text-plum">
+                  <span className="font-serif text-xl font-medium text-plum transition-transform duration-300 group-hover:-translate-x-1">
                     ₺{product.price}
                   </span>
                 </div>
