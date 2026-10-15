@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu as MenuIcon, X, ArrowRight } from 'lucide-react';
-import { siteConfig } from '@/data/site';
+import { brandLogo, siteConfig } from '@/data/site';
 import { useScrollPosition } from '@/hooks/useScrollReveal';
 
 const navLinks = [
@@ -25,13 +25,16 @@ export default function Navbar() {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgColor} border-b ${borderColor}`}>
         <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-12 lg:py-5">
-          {/* Wordmark */}
           <Link
             to="/"
-            className={`font-serif text-lg font-medium tracking-tight transition-colors duration-300 ${textColor} sm:text-xl`}
+            className="flex h-9 w-[9.5rem] items-center sm:h-10 sm:w-[10.5rem]"
             aria-label={`${siteConfig.name} ana sayfa`}
           >
-            <span className="italic">Wysteria</span> Works
+            <img
+              src={brandLogo}
+              alt={siteConfig.name}
+              className={`h-full w-full object-cover transition-all duration-300 ${transparent ? '' : 'brightness-0 opacity-75'}`}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -61,7 +64,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden"
+            className="rounded-full p-2 lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
             aria-expanded={open}

@@ -14,7 +14,7 @@ export default function App() {
       <PageMeta />
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />

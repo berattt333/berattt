@@ -59,6 +59,8 @@ export default function MenuPage() {
                       src={product.image}
                       alt={product.alt}
                       loading="lazy"
+                      decoding="async"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>

@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { heroImage, siteConfig } from '@/data/site';
+import { brandLogo, heroImage, siteConfig } from '@/data/site';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-plum">
+    <section className="relative min-h-[min(900px,100svh)] overflow-hidden bg-plum">
       {/* Background image — soft organic mask */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-center animate-slow-zoom"
+          className="absolute inset-0 bg-cover bg-center motion-safe:lg:animate-slow-zoom"
           style={{
             backgroundImage: `url(${heroImage})`,
             clipPath: 'polygon(0 0, 100% 0, 100% 88%, 60% 100%, 0 92%)',
@@ -54,6 +54,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-6 pb-24 pt-28 lg:px-12">
         <div className="max-w-2xl">
+          <img
+            src={brandLogo}
+            alt={siteConfig.name}
+            width="320"
+            height="320"
+            className="mb-7 h-20 w-48 object-cover object-center animate-fade-up sm:h-24 sm:w-56"
+          />
           <span className="animate-fade-up text-[11px] font-medium uppercase tracking-wide-3 text-brass-light">
             {siteConfig.name} — Çark Caddesi
           </span>
